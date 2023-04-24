@@ -22,7 +22,7 @@
         <div class="header__logo-container">
             <div class="header__logo-img-cont">
                 <img
-                    src="{{asset('assets/png/john-doe.png')}}"
+                    src="{{asset('assets/png/aya-hosni.png')}}"
                     alt="Ram Maheshwari Logo Image"
                     class="header__logo-img"
                 />
