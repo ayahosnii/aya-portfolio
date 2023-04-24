@@ -98,48 +98,18 @@
     </div>
     <div class="home-hero__socials">
         <div class="home-hero__social">
-            <a href="#" class="home-hero__social-icon-link">
+            <a href="https://www.linkedin.com/in/ayahosny" class="home-hero__social-icon-link">
                 <img
-                    src="./assets/png/linkedin-ico.png"
+                    src="{{asset('assets/png/linkedin-ico.png')}}"
                     alt="icon"
                     class="home-hero__social-icon"
                 />
             </a>
         </div>
         <div class="home-hero__social">
-            <a href="#" class="home-hero__social-icon-link">
+            <a href="https://github.com/ayahosnii" class="home-hero__social-icon-link">
                 <img
-                    src="./assets/png/github-ico.png"
-                    alt="icon"
-                    class="home-hero__social-icon"
-                />
-            </a>
-        </div>
-        <div class="home-hero__social">
-            <a href="#" class="home-hero__social-icon-link">
-                <img
-                    src="./assets/png/twitter-ico.png"
-                    alt="icon"
-                    class="home-hero__social-icon"
-                />
-            </a>
-        </div>
-        <div class="home-hero__social">
-            <a href="#" class="home-hero__social-icon-link">
-                <img
-                    src="./assets/png/yt-ico.png"
-                    alt="icon"
-                    class="home-hero__social-icon"
-                />
-            </a>
-        </div>
-        <div class="home-hero__social">
-            <a
-                href="#"
-                class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
-            >
-                <img
-                    src="./assets/png/insta-ico.png"
+                    src="{{asset('assets/png/github-ico.png')}}"
                     alt="icon"
                     class="home-hero__social-icon"
                 />
@@ -219,21 +189,21 @@
             <div class="projects__row">
                 <div class="projects__row-img-cont">
                     <img
-                        src="{{asset('assets/jpeg/project-mockup-example.jpeg')}}"
+                        src="{{asset('assets/jpeg/restaurant.jpg')}}"
                         alt="Software Screenshot"
                         class="projects__row-img"
                         loading="lazy"
                     />
                 </div>
                 <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">Restaurant</h3>
+                    <h3 class="projects__row-content-title">Restaurant Laravel project</h3>
                     <p class="projects__row-content-desc">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
                         facilis tempora, explicabo quae quod deserunt eius sapiente
                         praesentium.
                     </p>
                     <a
-                        href="./project-1.html"
+                        href="{{url('https://restaurant.ayahosni.com')}}"
                         class="btn btn--med btn--theme dynamicBgClr"
                         target="_blank"
                     >Case Study</a
@@ -243,21 +213,21 @@
             <div class="projects__row">
                 <div class="projects__row-img-cont">
                     <img
-                        src="./assets/jpeg/project-mockup-example.jpeg"
+                        src="{{asset('assets/jpeg/gym.jpg')}}"
                         alt="Software Screenshot"
                         class="projects__row-img"
                         loading="lazy"
                     />
                 </div>
                 <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">Project 2</h3>
+                    <h3 class="projects__row-content-title">Fitness Laravel project</h3>
                     <p class="projects__row-content-desc">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
                         facilis tempora, explicabo quae quod deserunt eius sapiente
                         praesentium.
                     </p>
                     <a
-                        href="./project-2.html"
+                        href="{{url('https://fitness.ayahosni.com')}}"
                         class="btn btn--med btn--theme dynamicBgClr"
                         target="_blank"
                     >Case Study</a
