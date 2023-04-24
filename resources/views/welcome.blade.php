@@ -161,16 +161,18 @@
                 <div class="skills">
                     <div class="skills__skill">HTML</div>
                     <div class="skills__skill">CSS</div>
+                    <div class="skills__skill">PHP</div>
+                    <div class="skills__skill">OOP</div>
                     <div class="skills__skill">JavaScript</div>
-                    <div class="skills__skill">React</div>
-                    <div class="skills__skill">SASS</div>
-                    <div class="skills__skill">GIT</div>
-                    <div class="skills__skill">Shopify</div>
-                    <div class="skills__skill">Wordpress</div>
-                    <div class="skills__skill">Google ADS</div>
-                    <div class="skills__skill">Facebook Ads</div>
-                    <div class="skills__skill">Android</div>
-                    <div class="skills__skill">IOS</div>
+                    <div class="skills__skill">jQuery</div>
+                    <div class="skills__skill">Git</div>
+                    <div class="skills__skill">MySQL</div>
+                    <div class="skills__skill">Laravel</div>
+                    <div class="skills__skill">MVC frameworks</div>
+                    <div class="skills__skill">API development</div>
+                    <div class="skills__skill">Test-driven development (TDD)</div>
+                    <div class="skills__skill">Server administration</div>
+                    <div class="skills__skill">VUEjs</div>
                 </div>
             </div>
         </div>
