@@ -84,10 +84,10 @@
 </header>
 <section class="home-hero">
     <div class="home-hero__content">
-        <h1 class="heading-primary">Hey, My name is Aya Hosni</h1>
+        <h1 class="heading-primary">Hey, my name is Aya Hosni</h1>
         <div class="home-hero__info">
             <p class="text-primary">
-                I'm a backend developer
+                I'm a PHP web developer with a passion for building efficient and elegant web applications. I'm always looking to learn new skills and take on new challenges to improve my abilities as a developer.
             </p>
         </div>
         <div class="home-hero__cta">
@@ -96,6 +96,7 @@
             </a>
         </div>
     </div>
+
     <div class="home-hero__socials">
         <div class="home-hero__social">
             <a href="https://www.linkedin.com/in/ayahosny" class="home-hero__social-icon-link">
