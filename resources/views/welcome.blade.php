@@ -87,13 +87,13 @@
         <h1 class="heading-primary">Hey, My name is Aya Hosni</h1>
         <div class="home-hero__info">
             <p class="text-primary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-                tempora explicabo quae quod deserunt eius sapiente solutions for
-                complex problems
+                I'm a backend developer
             </p>
         </div>
         <div class="home-hero__cta">
-            <a href="./#projects" class="btn btn--bg">Projects</a>
+            <a href="{{asset('cv/aya.pdf')}}" download="aya.pdf" class="btn btn--bg">
+                Download CV
+            </a>
         </div>
     </div>
     <div class="home-hero__socials">
