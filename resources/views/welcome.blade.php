@@ -84,7 +84,7 @@
 </header>
 <section class="home-hero">
     <div class="home-hero__content">
-        <h1 class="heading-primary">Hey, my name is Aya Hosni</h1>
+        <h1 class="heading-primary">Hey, I'm Aya Hosni</h1>
         <div class="home-hero__info">
             <p class="text-primary">
                 I'm a PHP web developer with a passion for building efficient and elegant web applications. I'm always looking to learn new skills and take on new challenges to improve my abilities as a developer.
@@ -99,9 +99,9 @@
 
     <div class="home-hero__socials">
         <div class="home-hero__social">
-            <a href="https://www.linkedin.com/in/ayahosny" class="home-hero__social-icon-link">
+            <a href="{{url('https://www.linkedin.com/in/ayahosny')}}" class="home-hero__social-icon-link">
                 <img
-                    src="{{asset('assets/png/linkedin-ico.png')}}"
+                    src="{{url('https://d33wubrfki0l68.cloudfront.net/d8e6e1e636531e28274a1b8b6d947b817f6145bd/d42d3/assets/svg/linkedin-dark.svg')}}"
                     alt="icon"
                     class="home-hero__social-icon"
                 />
@@ -110,7 +110,7 @@
         <div class="home-hero__social">
             <a href="https://github.com/ayahosnii" class="home-hero__social-icon-link">
                 <img
-                    src="{{asset('assets/png/github-ico.png')}}"
+                    src="{{url('https://d33wubrfki0l68.cloudfront.net/38469cf88d038b6ba3322c9fcb93a8f7167df4b9/cb0b9/assets/svg/github-dark.svg')}}"
                     alt="icon"
                     class="home-hero__social-icon"
                 />
@@ -126,35 +126,23 @@
         <h2 class="heading heading-sec heading-sec__mb-med">
             <span class="heading-sec__main">About Me</span>
             <span class="heading-sec__sub">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-            tempora explicabo quae quod deserunt eius sapiente
+            Here  you will find further details about myself, including my areas of expertise
+                and current proficiencies mainly focused on programming and technology.
           </span>
         </h2>
         <div class="about__content">
             <div class="about__content-main">
-                <h3 class="about__content-title">Get to know me!</h3>
+                <h3 class="about__content-title">About Me</h3>
                 <div class="about__content-details">
                     <p class="about__content-details-para">
-                        Hey! It's
-                        <strong>Aya Hosni</strong>
-                        and I'm a <strong> Backend Web Developer </strong> located in
-                        Los Angeles. I've done
-                        <strong> remote </strong>
-                        projects for agencies, consulted for startups, and collaborated
-                        with talented people to create
-                        <strong>digital products </strong>
-                        for both business and consumer use.
+                        Hi there! It's <strong> Aya Hosni </strong> and I'm a Backend Web Developer.
+                        I am dedicated to honing my skills and gaining hands-on experience.
                     </p>
                     <p class="about__content-details-para">
-                        I'm a bit of a digital product junky. Over the years, I've used
-                        hundreds of web and mobile apps in different industries and
-                        verticals. Feel free to
-                        <strong>contact</strong> me here.
+                        My educational background includes learning PHP and Laravel, as well as developing a solid understanding of HTML, CSS, JavaScript, and jQuery. I am constantly expanding my knowledge and exploring new technologies to stay ahead of industry trends.
                     </p>
                 </div>
-                <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr"
-                >Contact</a
-                >
+                <a href="#contact" class="btn btn--med btn--theme dynamicBgClr">Contact Me</a>
             </div>
             <div class="about__content-skills">
                 <h3 class="about__content-title">My Skills</h3>
@@ -183,8 +171,7 @@
         <h2 class="heading heading-sec heading-sec__mb-bg">
             <span class="heading-sec__main">Projects</span>
             <span class="heading-sec__sub">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
-            tempora explicabo quae quod deserunt eius sapiente
+            In this section, you will come across various projects that I have developed
           </span>
         </h2>
 
@@ -240,21 +227,21 @@
             <div class="projects__row">
                 <div class="projects__row-img-cont">
                     <img
-                        src="./assets/jpeg/project-mockup-example.jpeg"
+                        src="{{asset('assets/jpeg/blood-bank.jpg')}}"
                         alt="Software Screenshot"
                         class="projects__row-img"
                         loading="lazy"
                     />
                 </div>
                 <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">Project 3</h3>
+                    <h3 class="projects__row-content-title">Blood bank project</h3>
                     <p class="projects__row-content-desc">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
                         facilis tempora, explicabo quae quod deserunt eius sapiente
                         praesentium.
                     </p>
                     <a
-                        href="./project-3.html"
+                        href="{{url('https://fitness.ayahosni.com')}}"
                         class="btn btn--med btn--theme dynamicBgClr"
                         target="_blank"
                     >Case Study</a
@@ -324,17 +311,17 @@
                     <span>Social</span>
                 </h2>
                 <div class="main-footer__social-cont">
-                    <a target="_blank" rel="noreferrer" href="#">
+                    <a target="_blank" rel="noreferrer" href="{{url('https://www.linkedin.com/in/ayahosny')}}">
                         <img
                             class="main-footer__icon"
-                            src="./assets/png/linkedin-ico.png"
+                            src="{{asset('assets/png/linkedin-ico.png')}}"
                             alt="icon"
                         />
                     </a>
-                    <a target="_blank" rel="noreferrer" href="#">
+                    <a target="_blank" rel="noreferrer" href="{{url('https://github.com/ayahosnii')}}">
                         <img
                             class="main-footer__icon"
-                            src="./assets/png/github-ico.png"
+                            src="{{asset('assets/png/github-ico.png')}}"
                             alt="icon"
                         />
                     </a>

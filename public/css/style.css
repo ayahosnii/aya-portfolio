@@ -185,7 +185,7 @@ textarea {
 
 .home-hero {
   color: #fff;
-  background: linear-gradient(to right, rgb(169 23 56), rgb(235 97 125 / 80%)), url(../../assets/svg/common-bg.svg);
+  background: linear-gradient(to right, rgb(169 23 56), rgb(235 97 125 / 60%)), url(../../assets/svg/common-bg.svg);
   background-position: center;
   height: 100vh;
   min-height: 80rem;
@@ -213,7 +213,9 @@ textarea {
       .home-hero__mouse-scroll-cont {
         display: none; } }
   .home-hero__social {
-    width: 5rem; }
+    width: 5rem;
+    background-color: #FFF;
+  }
   .home-hero__social-icon-link {
     width: 100%;
     display: block;
@@ -274,12 +276,33 @@ textarea {
         margin: 0 3px; }
       .about__content-details-para:last-child {
         margin-bottom: 4rem; }
+.projects__content {
+    display: flex;
+    justify-content: space-between;
+}
 
+.projects__container {
+    width: calc(50% - 2.5rem);
+}
+
+@media only screen and (max-width: 56.25em) {
+    .projects__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects__container {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+}
 .projects__row {
   display: grid;
+  /*
   grid-template-columns: 1.5fr 1fr;
+  */
   grid-gap: 5rem;
-  margin-bottom: 11rem; }
+  /*margin-bottom: 11rem;*/ }
   @media only screen and (max-width: 56.25em) {
     .projects__row {
       grid-template-columns: 1fr;
@@ -313,6 +336,7 @@ textarea {
         .projects__row-content-title {
           font-size: 2.4rem; } }
     .projects__row-content-desc {
+    margin-right: 42px;
       font-size: 1.8rem;
       color: grey;
       max-width: 60rem;
@@ -323,7 +347,7 @@ textarea {
           font-size: 1.7rem; } }
 
 .contact {
-  background: linear-gradient(to right,  rgb(169 23 56), rgb(235 97 125 / 80%)), url(../../assets/svg/common-bg.svg);
+  background: linear-gradient(to right, rgb(169 23 56 / 88%), rgb(235 97 125 / 71%)), url(../../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center; }
   .contact__form-container {
@@ -404,7 +428,7 @@ textarea {
 
 .project-cs-hero {
   color: #fff;
-  background: linear-gradient(to right, rgb(169 23 56), rgb(235 97 125 / 80%)), url(../../assets/svg/common-bg.svg);
+  background: linear-gradient(to right, rgb(169 23 56 / 71%), rgb(235 97 125 / 26%)), url(../../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
   position: relative; }
