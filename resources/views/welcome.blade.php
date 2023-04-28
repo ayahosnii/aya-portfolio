@@ -1,87 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Aya's portfolio</title>
-    <meta name="description" content="Portfolio Template for Developer" />
-
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-        rel="stylesheet"
-    />
-</head>
-<body>
-<header class="header">
-    <div class="header__content">
-        <div class="header__logo-container">
-            <div class="header__logo-img-cont">
-                <img
-                    src="{{asset('assets/png/aya-hosni.png')}}"
-                    alt="Ram Maheshwari Logo Image"
-                    class="header__logo-img"
-                />
-            </div>
-            <span class="header__logo-sub">Aya Hosni</span>
-        </div>
-        <div class="header__main">
-            <ul class="header__links">
-                <li class="header__link-wrapper">
-                    <a href="{{url('/')}}" class="header__link"> Home </a>
-                </li>
-                <li class="header__link-wrapper">
-                    <a href="#about" class="header__link">About </a>
-                </li>
-                <li class="header__link-wrapper">
-                    <a href="#projects" class="header__link">
-                        Projects
-                    </a>
-                </li>
-                <li class="header__link-wrapper">
-                    <a href="#contact" class="header__link"> Contact </a>
-                </li>
-            </ul>
-            <div class="header__main-ham-menu-cont">
-                <img
-                    src="./assets/svg/ham-menu.svg"
-                    alt="hamburger menu"
-                    class="header__main-ham-menu"
-                />
-                <img
-                    src="./assets/svg/ham-menu-close.svg"
-                    alt="hamburger menu close"
-                    class="header__main-ham-menu-close d-none"
-                />
-            </div>
-        </div>
-    </div>
-    <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-            <ul class="header__sm-menu-links">
-                <li class="header__sm-menu-link">
-                    <a href="{{url('/')}}"> Home </a>
-                </li>
-
-                <li class="header__sm-menu-link">
-                    <a href="#about"> About </a>
-                </li>
-
-                <li class="header__sm-menu-link">
-                    <a href="#projects"> Projects </a>
-                </li>
-
-                <li class="header__sm-menu-link">
-                    <a href="#contact"> Contact </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</header>
+@extends('layouts.app')
+@section('content')
 <section class="home-hero">
     <div class="home-hero__content">
         <h1 class="heading-primary">Hey, I'm Aya Hosni</h1>
@@ -147,20 +65,9 @@
             <div class="about__content-skills">
                 <h3 class="about__content-title">My Skills</h3>
                 <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">PHP</div>
-                    <div class="skills__skill">OOP</div>
-                    <div class="skills__skill">JavaScript</div>
-                    <div class="skills__skill">jQuery</div>
-                    <div class="skills__skill">Git</div>
-                    <div class="skills__skill">MySQL</div>
-                    <div class="skills__skill">Laravel</div>
-                    <div class="skills__skill">MVC frameworks</div>
-                    <div class="skills__skill">API development</div>
-                    <div class="skills__skill">Test-driven development (TDD)</div>
-                    <div class="skills__skill">Server administration</div>
-                    <div class="skills__skill">VUEjs</div>
+                    @foreach($skills as $skill)
+                    <div class="skills__skill">{{ $skill->name }}</div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -171,60 +78,41 @@
         <h2 class="heading heading-sec heading-sec__mb-bg">
             <span class="heading-sec__main">Projects</span>
             <span class="heading-sec__sub">
-            In this section, you will come across various projects that I have developed
+            <a href="{{route('all.projects')}}" class="btn btn--med btn--theme dynamicBgClr"
+                                                target="_blank">More projects</a>
           </span>
         </h2>
 
+
         <div class="projects__content">
+            @foreach($projects as $project)
             <div class="projects__row">
                 <div class="projects__row-img-cont">
                     <img
-                        src="{{asset('assets/jpeg/restaurant.jpg')}}"
+                        src="{{asset('assets/mock/'. $project->image)}}"
                         alt="Software Screenshot"
                         class="projects__row-img"
                         loading="lazy"
                     />
                 </div>
                 <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">Restaurant Laravel project</h3>
+                    <h3 class="projects__row-content-title">{{$project->title}}</h3>
                     <p class="projects__row-content-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                        facilis tempora, explicabo quae quod deserunt eius sapiente
-                        praesentium.
+                        {{substr($project->description, 0, 150)}} <a style="color: blue" href="{{route('details', $project->slug)}}">...more</a>
                     </p>
+
                     <a
-                        href="{{url('https://restaurant.ayahosni.com')}}"
+                        href="{{route('details', $project->slug)}}"
                         class="btn btn--med btn--theme dynamicBgClr"
                         target="_blank"
                     >Case Study</a
                     >
                 </div>
             </div>
-            <div class="projects__row">
-                <div class="projects__row-img-cont">
-                    <img
-                        src="{{asset('assets/jpeg/gym.jpg')}}"
-                        alt="Software Screenshot"
-                        class="projects__row-img"
-                        loading="lazy"
-                    />
-                </div>
-                <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">Fitness Laravel project</h3>
-                    <p class="projects__row-content-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                        facilis tempora, explicabo quae quod deserunt eius sapiente
-                        praesentium.
-                    </p>
-                    <a
-                        href="{{url('https://fitness.ayahosni.com')}}"
-                        class="btn btn--med btn--theme dynamicBgClr"
-                        target="_blank"
-                    >Case Study</a
-                    >
-                </div>
-            </div>
-            <div class="projects__row">
+            @endforeach
+
+
+           {{-- <div class="projects__row">
                 <div class="projects__row-img-cont">
                     <img
                         src="{{asset('assets/jpeg/blood-bank.jpg')}}"
@@ -247,7 +135,7 @@
                     >Case Study</a
                     >
                 </div>
-            </div>
+            </div>--}}
         </div>
     </div>
 </section>
@@ -261,7 +149,8 @@
           </span>
         </h2>
         <div class="contact__form-container">
-            <form action="#" class="contact__form">
+            <form action="{{route('send')}}" method="POST" class="contact__form">
+                @csrf
                 <div class="contact__form-field">
                     <label class="contact__form-label" for="name">Name</label>
                     <input
@@ -303,70 +192,4 @@
         </div>
     </div>
 </section>
-<footer class="main-footer">
-    <div class="main-container">
-        <div class="main-footer__upper">
-            <div class="main-footer__row main-footer__row-1">
-                <h2 class="heading heading-sm main-footer__heading-sm">
-                    <span>Social</span>
-                </h2>
-                <div class="main-footer__social-cont">
-                    <a target="_blank" rel="noreferrer" href="{{url('https://www.linkedin.com/in/ayahosny')}}">
-                        <img
-                            class="main-footer__icon"
-                            src="{{asset('assets/png/linkedin-ico.png')}}"
-                            alt="icon"
-                        />
-                    </a>
-                    <a target="_blank" rel="noreferrer" href="{{url('https://github.com/ayahosnii')}}">
-                        <img
-                            class="main-footer__icon"
-                            src="{{asset('assets/png/github-ico.png')}}"
-                            alt="icon"
-                        />
-                    </a>
-                    <a target="_blank" rel="noreferrer" href="#">
-                        <img
-                            class="main-footer__icon"
-                            src="./assets/png/twitter-ico.png"
-                            alt="icon"
-                        />
-                    </a>
-                    <a target="_blank" rel="noreferrer" href="#">
-                        <img
-                            class="main-footer__icon"
-                            src="./assets/png/yt-ico.png"
-                            alt="icon"
-                        />
-                    </a>
-                    <a target="_blank" rel="noreferrer" href="#">
-                        <img
-                            class="main-footer__icon main-footer__icon--mr-none"
-                            src="./assets/png/insta-ico.png"
-                            alt="icon"
-                        />
-                    </a>
-                </div>
-            </div>
-            <div class="main-footer__row main-footer__row-2">
-                <h4 class="heading heading-sm text-lt">Aya Hosni</h4>
-                <p class="main-footer__short-desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
-                    tempora explicabo quae quod deserunt
-                </p>
-            </div>
-        </div>
-
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-            &copy; Copyright 2021. Made by
-            <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-            >
-        </div>
-    </div>
-</footer>
-
-<script src="{{asset('assets/index.js')}}"></script>
-</body>
-</html>
+@endsection

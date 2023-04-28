@@ -62,6 +62,27 @@ button {
 textarea {
   resize: none; }
 
+#loading-screen {
+    background-color: #262626;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+}
+
+/* Hide the content while the loading screen is visible */
+#content {
+    display: none;
+}
+
 .heading-primary {
   font-size: 6rem;
   text-transform: uppercase;
@@ -191,6 +212,15 @@ textarea {
   min-height: 80rem;
   max-height: 120rem;
   position: relative; }
+
+.all-hero {
+  color: #fff;
+  background: linear-gradient(to right, rgb(169 23 56), rgb(235 97 125 / 60%)), url(../../assets/svg/common-bg.svg);
+  background-position: center;
+  height: 70vh;
+  min-height: 60rem;
+  max-height: 120rem;
+  position: relative; }
   @media only screen and (max-width: 37.5em) {
     .home-hero {
       height: unset;
@@ -302,6 +332,7 @@ textarea {
   grid-template-columns: 1.5fr 1fr;
   */
   grid-gap: 5rem;
+    margin: 10px;
   /*margin-bottom: 11rem;*/ }
   @media only screen and (max-width: 56.25em) {
     .projects__row {
@@ -458,6 +489,13 @@ textarea {
   padding: 8rem 0;
   max-width: 90rem;
   margin: auto; }
+
+.project-all__content {
+    padding: 8rem 0;
+    width: 45%;
+    margin: 10px;
+    display: inline-block;
+}
   .project-details__content-title {
     font-weight: 700;
     font-size: 2.8rem;
