@@ -126,7 +126,7 @@ class DashboardController extends Controller
     }
     public function views()
     {
-        $visitors = Visitor::orderBy('created_at', 'desc')->paginate();
+        $visitors = Visitor::orderBy('created_at', 'desc')->paginate(6);
         return view('admin.visitors.index', compact('visitors'));
     }
 
