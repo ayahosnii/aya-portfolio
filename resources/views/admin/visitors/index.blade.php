@@ -18,7 +18,7 @@
         <!-- form start -->
         <div class="card">
             <div class="card-header">
-                <a href="{{route('admin.skills.create')}}" class="btn btn-success">Create +</a>
+                Viewers {{$visitors->count()}}
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -53,9 +53,9 @@
                     </tr>
                     </tfoot>
                 </table>
-                {{$visitors->links()}}
             </div>
             <!-- /.card-body -->
+            {{$visitors->links()}}
         </div>
     </div>
         </div>
