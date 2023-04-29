@@ -29,6 +29,8 @@ Route::post('admin/login', [DashboardController::class, 'loginPost'])->name('adm
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function (){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
+    Route::get('/views', [DashboardController::class, 'views'])->name('admin.views.index');
+
     Route::get('/skills', [DashboardController::class, 'skills'])->name('admin.skills.index');
     Route::get('/skills/create', [DashboardController::class, 'createSkill'])->name('admin.skills.create');
     Route::post('/skills/store', [DashboardController::class, 'storeSkill'])->name('admin.skills.store');

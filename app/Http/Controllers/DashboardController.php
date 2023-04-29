@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Skill;
+use App\Models\Visitor;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -122,6 +123,11 @@ class DashboardController extends Controller
     {
         $skills = Skill::get();
         return view('admin.skills.index', compact('skills'));
+    }
+    public function views()
+    {
+        $visitors = Visitor::get();
+        return view('admin.visitors.index', compact('visitors'));
     }
 
     public function createSkill()
