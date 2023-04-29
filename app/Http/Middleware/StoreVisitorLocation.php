@@ -18,7 +18,8 @@ class StoreVisitorLocation
      */
     public function handle(Request $request, Closure $next)
     {
-        $position = Location::get();
+
+        $position = Location::get(request()->ip());
 
         if ($position) {
             $latitude = $position->latitude;
