@@ -53,7 +53,7 @@
                     </tr>
                     </tfoot>
                 </table>
-                {{$visitors->link()}}
+                {{$visitors->links()}}
             </div>
             <!-- /.card-body -->
         </div>
