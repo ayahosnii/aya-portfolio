@@ -18,7 +18,7 @@
         <!-- form start -->
         <div class="card">
             <div class="card-header">
-                Viewers {{$visitors->count()}}
+                Viewers {{$count}}
             </div>
             <!-- /.card-header -->
             <div class="card-body">
