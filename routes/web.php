@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-Route::post('/send', [WelcomeController::class, 'submit'])->name('send');
-Route::get('/{slug}', [WelcomeController::class, 'details'])->name('details');
-Route::get('/projects/all', [WelcomeController::class, 'all'])->name('all.projects');
-
+Route::middleware(['store-visitor-location'])->group(function () {
+    Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+    Route::post('/send', [WelcomeController::class, 'submit'])->name('send');
+    Route::get('/{slug}', [WelcomeController::class, 'details'])->name('details');
+    Route::get('/projects/all', [WelcomeController::class, 'all'])->name('all.projects');
+});
 
 Route::get('admin/login', [DashboardController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [DashboardController::class, 'loginPost'])->name('admin.login.post');
@@ -42,5 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function (){
     Route::post('/project/store', [DashboardController::class, 'storeProject'])->name('admin.projects.store');
     Route::post('/admin/projects/{id}/update', [DashboardController::class, 'updateProject'])->name('admin.projects.update');
 
+
+    Route::get('/visitor', [DashboardController::class, 'visitor'])->name('admin.visitor.index');
 });
 

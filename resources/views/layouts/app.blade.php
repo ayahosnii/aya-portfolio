@@ -140,14 +140,6 @@
                 </p>
             </div>
         </div>
-
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-            &copy; Copyright 2021. Made by
-            <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-            >
-        </div>
     </div>
 </footer>
 <script src="{{asset('assets/js/loader.js')}}"></script>
