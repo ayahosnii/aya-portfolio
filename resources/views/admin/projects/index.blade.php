@@ -37,7 +37,7 @@
                     @foreach($projects as $project)
                     <tr>
                         <td>{{$project->title}}</td>
-                        <td>{{$project->description}}</td>
+                        <td>{!! $project->description !!}</td>
                         <td>{{$project->image}}</td>
                         <td>{{$project->project_link}}</td>
                         <td>{{$project->github_link}}</td>

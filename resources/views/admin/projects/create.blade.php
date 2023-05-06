@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Description</label>
-                    <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror">
+                    <textarea type="text" id="description"  name="description" class="form-control @error('description') is-invalid @enderror">
                     </textarea>
                     @error('description')
                     <span class="invalid-feedback text-danger" role="alert">

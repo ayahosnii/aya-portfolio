@@ -27,7 +27,7 @@
                     <div class="project-details__desc">
                         <h3 class="project-details__content-title">{{$project->title}}</h3>
                         <p class="project-details__desc-para">
-                            {{ $project->description}}
+                            {!! $project->description !!}
                         </p>
                     </div>
                     <div class="project-details__tools-used">
