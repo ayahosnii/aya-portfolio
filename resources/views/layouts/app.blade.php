@@ -112,21 +112,21 @@
                     <a target="_blank" rel="noreferrer" href="#">
                         <img
                             class="main-footer__icon"
-                            src="./assets/png/twitter-ico.png"
+                            src="{{asset('assets/png/twitter-ico.png')}}"
                             alt="icon"
                         />
                     </a>
                     <a target="_blank" rel="noreferrer" href="#">
                         <img
                             class="main-footer__icon"
-                            src="./assets/png/yt-ico.png"
+                            src="{{asset('assets/png/yt-ico.png')}}"
                             alt="icon"
                         />
                     </a>
                     <a target="_blank" rel="noreferrer" href="#">
                         <img
                             class="main-footer__icon main-footer__icon--mr-none"
-                            src="./assets/png/insta-ico.png"
+                            src="{{asset('assets/png/insta-ico.png')}}"
                             alt="icon"
                         />
                     </a>
