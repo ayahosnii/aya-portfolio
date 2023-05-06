@@ -97,9 +97,9 @@
                 </div>
                 <div class="projects__row-content">
                     <h3 class="projects__row-content-title">{{$project->title}}</h3>
-                    <p class="projects__row-content-desc">
+                    <div class="projects__row-content-desc">
                         {!! substr($project->description, 0, 150) !!} <a style="color: blue" href="{{route('details', $project->slug)}}">...more</a>
-                    </p>
+                    </div>
 
                     <a
                         href="{{route('details', $project->slug)}}"
