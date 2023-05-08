@@ -22,7 +22,15 @@
                         alt="Project Image"
                         class="project-details__showcase-img"
                     />
+
+                    @isset($project->video)
+                        <h2>Watch the video for more details</h2>
+                        <video class="project-details__showcase-img" controls>
+                            <source src="{{asset('cv/'.$project->video)}}" type="video/mp4">
+                        </video>
+                    @endisset
                 </div>
+
                 <div class="project-details__content-main">
                     <div class="project-details__desc">
                         <h3 class="project-details__content-title">{{$project->title}}</h3>
