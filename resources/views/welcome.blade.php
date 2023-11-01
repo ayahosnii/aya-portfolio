@@ -73,19 +73,16 @@
         </div>
     </div>
 </section>
+
 <section id="projects" class="projects sec-pad">
     <div class="main-container">
         <h2 class="heading heading-sec heading-sec__mb-bg">
             <span class="heading-sec__main">Projects</span>
-            <span class="heading-sec__sub">
-            <a href="{{route('all.projects')}}" class="btn btn--med btn--theme dynamicBgClr"
-                                                target="_blank">More projects</a>
-          </span>
+
         </h2>
 
-
-        <div class="projects__content">
-            @foreach($projects as $project)
+        <div class="projects__content" style="margin: 0 10% 0 10%;">
+           {{-- @foreach($projects as $project)
             <div class="projects__row">
                 <div class="projects__row-img-cont">
                     <img
@@ -110,34 +107,62 @@
                     >
                 </div>
             </div>
-            @endforeach
+            @endforeach--}}
+
+            <div class="owl-carousel owl-theme">
+                @foreach($projects as $project)
+                <div class="item">
+                    <div class="project-info">
+                        <a href="{{route('details', $project->slug)}}" target="_blank">
+                            <img style="height: 450px" src="{{asset('assets/mock/'. $project->image)}}" class="img-fluid" alt="project image">
+                        </a>
+                        <h3 class="projects__row-content-title" style="text-align:center;">{{$project->title}}</h3>
 
 
-           {{-- <div class="projects__row">
-                <div class="projects__row-img-cont">
-                    <img
-                        src="{{asset('assets/jpeg/blood-bank.jpg')}}"
-                        alt="Software Screenshot"
-                        class="projects__row-img"
-                        loading="lazy"
-                    />
+                        <span class="heading-sec__sub">
+
+            <a href="{{ route('details', $project->slug) }}"
+               class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          </span>
+
+                    </div>
                 </div>
-                <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">Blood bank project</h3>
-                    <p class="projects__row-content-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                        facilis tempora, explicabo quae quod deserunt eius sapiente
-                        praesentium.
-                    </p>
-                    <a
-                        href="{{url('https://fitness.ayahosni.com')}}"
-                        class="btn btn--med btn--theme dynamicBgClr"
-                        target="_blank"
-                    >Case Study</a
-                    >
-                </div>
-            </div>--}}
+                @endforeach
+
+            </div>
+
+
+
+
+
+            {{-- <div class="projects__row">
+                 <div class="projects__row-img-cont">
+                     <img
+                         src="{{asset('assets/jpeg/blood-bank.jpg')}}"
+                         alt="Software Screenshot"
+                         class="projects__row-img"
+                         loading="lazy"
+                     />
+                 </div>
+                 <div class="projects__row-content">
+                     <h3 class="projects__row-content-title">Blood bank project</h3>
+                     <p class="projects__row-content-desc">
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                         facilis tempora, explicabo quae quod deserunt eius sapiente
+                         praesentium.
+                     </p>
+                     <a
+                         href="{{url('https://fitness.ayahosni.com')}}"
+                         class="btn btn--med btn--theme dynamicBgClr"
+                         target="_blank"
+                     >Case Study</a
+                     >
+                 </div>
+             </div>--}}
         </div>
+        <span class="heading-sec__sub">
+            <a href="https://ayahosni.com/projects/all" class="btn btn--med btn--theme dynamicBgClr" target="_blank">More projects</a>
+          </span>
     </div>
 </section>
 <section id="contact" class="contact sec-pad dynamicBg">
@@ -186,7 +211,10 @@
                         id="message"
                     ></textarea>
                 </div>
-                <button type="submit" class="btn btn--theme contact__btn">
+                <button type="submit" class="btn btn--theme contact__btn g-recaptcha"
+                        data-sitekey="6LcDdegoAAAAAGkSNwR66209cVp-gDOqJK40kURY"
+                        data-callback='onSubmit'
+                        data-action='submit'>
                     Submit
                 </button>
             </form>

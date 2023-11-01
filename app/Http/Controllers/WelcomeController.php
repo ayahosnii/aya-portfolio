@@ -22,7 +22,7 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $projects = Project::take(2)->get();
+        $projects = Project::get();
         $skills = Skill::get();
         return view('welcome', compact('projects', 'skills'));
     }
