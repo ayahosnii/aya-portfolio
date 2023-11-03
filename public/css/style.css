@@ -205,6 +205,16 @@ textarea {
   display: none; }
 
 .home-hero {
+    color: #fff;
+    background: linear-gradient(to right, rgb(169 23 56), rgb(235 97 125 / 60%)), url(../../assets/svg/common-bg.svg);
+    background-position: center;
+    height: 100vh;
+    min-height: 80rem;
+    max-height: 120rem;
+    position: relative; }
+
+
+.details-hero {
   color: #fff;
 background-repeat: no-repeat;
 background-size: 100% auto;
