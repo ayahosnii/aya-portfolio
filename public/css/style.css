@@ -206,9 +206,10 @@ textarea {
 
 .home-hero {
   color: #fff;
-  background: linear-gradient(to right, rgb(169 23 56), rgb(235 97 125 / 60%)), url(../../assets/svg/common-bg.svg);
+background-repeat: no-repeat;
+background-size: 100% auto;
+height: 50vh;
   background-position: center;
-  height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
   position: relative; }
@@ -223,7 +224,7 @@ textarea {
   position: relative; }
   @media only screen and (max-width: 37.5em) {
     .home-hero {
-      height: unset;
+        height: 67vh;
       min-height: unset; } }
   .home-hero__socials {
     position: absolute;
@@ -787,9 +788,10 @@ textarea {
 
 @media (max-width: 600px) {
     .project-details__showcase-img {
-        height: 430px;
+        height: 350px;
     }
     .owl-carousel .owl-item img {
         height: 283px;
     }
+
 }

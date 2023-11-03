@@ -2,9 +2,7 @@
 @section('content')
     <section class="home-hero" style="
     background: linear-gradient(to right, rgb(169 23 56/ 70%), rgb(235 97 125 / 50%)), url({{asset('assets/mock/'. $project->image)}});
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    height: 50vh;
+
 "
     >
         <div class="project-cs-hero__content">
