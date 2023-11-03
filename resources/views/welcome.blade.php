@@ -114,7 +114,7 @@
                 <div class="item">
                     <div class="project-info">
                         <a href="{{route('details', $project->slug)}}" target="_blank">
-                            <img style="height: 450px" src="{{asset('assets/mock/'. $project->image)}}" class="img-fluid" alt="project image">
+                            <img src="{{asset('assets/mock/'. $project->image)}}" class="img-fluid" alt="project image">
                         </a>
                         <h3 class="projects__row-content-title" style="text-align:center;">{{$project->title}}</h3>
 

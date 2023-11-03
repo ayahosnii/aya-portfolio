@@ -21,22 +21,18 @@
                         class="project-details__showcase-img"
                     />
                 </div>
-                <div class="projects__row-content">
-                    <h3 class="projects__row-content-title">{{$project->title}}</h3>
-                    <p class="projects__row-content-desc">
-                        {!!  substr($project->description, 0, 150) !!} <a style="color: blue" href="{{route('details', $project->slug)}}">...more</a>
-                    </p>
+                <h3 class="projects__row-content-title" style="text-align:center;">{{$project->title}}</h3>
 
-                    <a
-                        href="{{route('details', $project->slug)}}"
-                        class="btn btn--med btn--theme dynamicBgClr"
-                        target="_blank"
-                    >Case Study</a
-                    >
-                </div>
+
+                <span class="heading-sec__sub">
+
+            <a href="{{ route('details', $project->slug) }}"
+               class="btn btn--med btn--theme dynamicBgClr" target="_blank">Case Study</a>
+          </span>
 
             </div>
             @endforeach
+        </div>
         </div>
     </section>
 @endsection
