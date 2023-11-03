@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome')->middleware('store-visitor-location');
 Route::post('/send', [WelcomeController::class, 'submit'])->name('send');
 Route::get('/{slug}', [WelcomeController::class, 'details'])->name('details');
 Route::get('/projects/all', [WelcomeController::class, 'all'])->name('all.projects');
 
+});
 
 Route::get('admin/login', [DashboardController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [DashboardController::class, 'loginPost'])->name('admin.login.post');
