@@ -58,21 +58,19 @@ class DashboardController extends Controller
             $imagePath = $imageName;
         }
 
-        $project = Project::create([
+
+
+        $data = [
             'slug' => $validation['slug'],
             'github_link' => $validation['github_link'],
             'project_link' => $validation['project_link'],
             'image' => $imagePath,
-        ]);
-
+            'en' => ['title' => $validation['title_en'], 'description'=> $validation['description']],
+            'ar' => ['title' => $validation['title_ar'], 'description'=> $validation['description']],
+        ];
         // Save translations
-        $project->translate('en')->title = $validation['title_en']; // Use the 'title_en' validation result
-        $project->translate('en')->description = $validation['description'];
+        $project = Project::create($data);;
 
-        $project->translate('ar')->title = $validation['title_ar']; // Use the 'title_ar' validation result
-        $project->translate('ar')->description = $validation['description'];
-
-        $project->save();
 
         $project->skills()->attach($validation['skills']);
 
