@@ -40,9 +40,9 @@ class DashboardController extends Controller
     {
 
             $validation = $request->validate([
-                'title' => 'required',
+                'title_en' => 'required',
                 'slug' => 'required|unique:projects',
-                'description' => 'required',
+                'description_en' => 'required',
                 'skills' => 'required|array|min:1',
                 'image' => 'required',
                 'github_link' => 'required',
@@ -52,11 +52,11 @@ class DashboardController extends Controller
 
             $project = new Project();
 
-            $project->translate('en')->title = $request->title;
-            $project->translate('en')->description = $request->description;
+            $project->translate('en')->title = $request->title_en;
+            $project->translate('en')->description = $request->description_en;
 
-            $project->translate('ar')->title = $request->title;
-            $project->translate('ar')->description = $request->description;
+            $project->translate('ar')->title = $request->title_ar;
+            $project->translate('ar')->description = $request->description_ar;
 
             $project->slug = $validation['slug'];
             $project->github_link = $validation['github_link'];

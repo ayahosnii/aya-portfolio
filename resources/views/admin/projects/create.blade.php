@@ -15,14 +15,28 @@
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Title</label>
-                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1" placeholder="Title">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="exampleInputEmail1">Title (En)</label>
+                            <input type="text" name="title_en" class="form-control @error('title_en') is-invalid @enderror" id="exampleInputEmail1" placeholder="Title">
 
-                         @error('title')
-                        <span class="invalid-feedback text-danger" role="alert">
+                            @error('title_en')
+                            <span class="invalid-feedback text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                          </span>
-                         @enderror
+                            @enderror
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exampleInputEmail1">Title (AR)</label>
+                            <input type="text" name="title_ar" class="form-control @error('title_ar') is-invalid @enderror" id="exampleInputEmail1" placeholder="Title">
+
+                            @error('title_ar')
+                            <span class="invalid-feedback text-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                         </span>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Slug</label>
@@ -67,10 +81,20 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Description</label>
-                    <textarea type="text" id="description"  name="description" class="form-control @error('description') is-invalid @enderror">
+                    <label for="exampleInputPassword1">Description en</label>
+                    <textarea type="text" id="description_en"  name="description_en" class="form-control @error('description_en') is-invalid @enderror">
                     </textarea>
-                    @error('description')
+                    @error('description_en')
+                    <span class="invalid-feedback text-danger" role="alert">
+                                <strong>{{ $message }}</strong>
+                         </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description ar</label>
+                    <textarea type="text" id="description_ar"  name="description_ar" class="form-control @error('description_ar') is-invalid @enderror">
+                    </textarea>
+                    @error('description_ar')
                     <span class="invalid-feedback text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                          </span>
