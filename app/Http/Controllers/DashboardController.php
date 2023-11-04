@@ -51,11 +51,17 @@ class DashboardController extends Controller
 
 
             $project = new Project();
-            $project->translate('en')->title = $validation['title'];
-            $project->translate('en')->description = $validation['description'];
 
-            $project->translate('ar')->title = $validation['title'];
-            $project->translate('ar')->description = $validation['description'];
+            $project->fillTranslations([
+            'en' => [
+                'title' =>  $request->title,
+                'description' => $request->description,
+            ],
+            'ar' => [
+                'title' =>  $request->title,
+                'description' => $request->description,
+            ],
+        ]);
 
             $project->slug = $validation['slug'];
             $project->github_link = $validation['github_link'];
