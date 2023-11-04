@@ -38,45 +38,44 @@ class DashboardController extends Controller
 
     public function storeProject(Request $request)
     {
+        $validation = $request->validate([
+            'title_en' => 'required',
+            'slug' => 'required|unique:projects',
+            'description' => 'required',
+            'skills' => 'required|array|min:1',
+            'image' => 'required|image',
+            'github_link' => 'required',
+            'project_link' => 'required',
+        ]);
 
-            $validation = $request->validate([
-                'title_en' => 'required',
-                'slug' => 'required|unique:projects',
-                'description' => 'required',
-                'skills' => 'required|array|min:1',
-                'image' => 'required',
-                'github_link' => 'required',
-                'project_link' => 'required',
-            ]);
+        $imagePath = null;
 
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(base_path('../assets/mock'), $imageName);
+            $imagePath = $imageName;
+        }
 
-            $project = new Project();
+        $project = Project::create([
+            'slug' => $validation['slug'],
+            'github_link' => $validation['github_link'],
+            'project_link' => $validation['project_link'],
+            'image' => $imagePath, // Set the image path you saved earlier
+        ]);
 
-            $project->slug = $validation['slug'];
-            $project->github_link = $validation['github_link'];
-            $project->project_link = $validation['project_link'];
-            $project->image = $validation['image'];
+        // Save translations
+        $project->translate('en')->title = $request->title_en;
+        $project->translate('en')->description = $request->description;
 
+        $project->translate('ar')->title = $request->title_ar;
+        $project->translate('ar')->description = $request->description;
 
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $image->move(base_path('../assets/mock'), $imageName);
-                $project->image = $imageName;
-            }
+        $project->save();
 
+        $project->skills()->attach($validation['skills']);
 
-            $project->save();
-
-            $project->skills()->attach($validation['skills']);
-
-            $project->translate('en')->title = $request->title_en;
-            $project->translate('en')->description = $request->description;
-
-            $project->translate('ar')->title = $request->title_ar;
-            $project->translate('ar')->description = $request->description;
-
-            return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index');
     }
 
     public function editProject($id)
