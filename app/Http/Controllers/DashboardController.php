@@ -42,7 +42,7 @@ class DashboardController extends Controller
             $validation = $request->validate([
                 'title_en' => 'required',
                 'slug' => 'required|unique:projects',
-                'description_en' => 'required',
+                'description' => 'required',
                 'skills' => 'required|array|min:1',
                 'image' => 'required',
                 'github_link' => 'required',
