@@ -71,10 +71,10 @@ class DashboardController extends Controller
             $project->skills()->attach($validation['skills']);
 
             $project->translate('en')->title = $request->title_en;
-            $project->translate('en')->description = $request->description_en;
+            $project->translate('en')->description = $request->description;
 
             $project->translate('ar')->title = $request->title_ar;
-            $project->translate('ar')->description = $request->description_en;
+            $project->translate('ar')->description = $request->description;
 
             return redirect()->route('admin.projects.index');
     }

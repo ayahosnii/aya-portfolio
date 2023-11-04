@@ -81,27 +81,15 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Description en</label>
-                    <textarea type="text" id="description_en"  name="description_en" class="form-control @error('description_en') is-invalid @enderror">
+                    <label for="exampleInputPassword1">Description</label>
+                    <textarea type="text" id="description"  name="description" class="form-control @error('description') is-invalid @enderror">
                     </textarea>
-                    @error('description_en')
+                    @error('description')
                     <span class="invalid-feedback text-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                          </span>
                     @enderror
                 </div>
-{{--
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Description ar</label>
-                    <textarea type="text" id="description_ar"  name="description_ar" class="form-control @error('description_ar') is-invalid @enderror">
-                    </textarea>
-                    @error('description_ar')
-                    <span class="invalid-feedback text-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                         </span>
-                    @enderror
-                </div>
---}}
                 <div class="form-group">
                     <label for="exampleInputFile">Image</label>
                     <div class="input-group">
