@@ -51,9 +51,13 @@ class DashboardController extends Controller
 
 
             $project = new Project();
-            $project->title = $validation['title'];
+            $project->setTranslation('title', 'en', $validation['title']); // English title
+            $project->setTranslation('title', 'ar', $validation['title']); // Arabic title
+
+            $project->setTranslation('description', 'en', $validation['description']); // English description
+            $project->setTranslation('description', 'ar', $validation['description']); // Arabic description
+
             $project->slug = $validation['slug'];
-            $project->description = $validation['description'];
             $project->github_link = $validation['github_link'];
             $project->project_link = $validation['project_link'];
             $project->image = $validation['image'];
@@ -62,7 +66,7 @@ class DashboardController extends Controller
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('assets/mock'), $imageName);
+                $image->move(base_path('../assets/mock'), $imageName);
                 $project->image = $imageName;
             }
 
