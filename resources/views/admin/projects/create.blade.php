@@ -90,6 +90,7 @@
                          </span>
                     @enderror
                 </div>
+{{--
                 <div class="form-group">
                     <label for="exampleInputPassword1">Description ar</label>
                     <textarea type="text" id="description_ar"  name="description_ar" class="form-control @error('description_ar') is-invalid @enderror">
@@ -100,6 +101,7 @@
                          </span>
                     @enderror
                 </div>
+--}}
                 <div class="form-group">
                     <label for="exampleInputFile">Image</label>
                     <div class="input-group">
