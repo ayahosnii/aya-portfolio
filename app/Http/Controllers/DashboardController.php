@@ -39,7 +39,7 @@ class DashboardController extends Controller
 
     public function storeProject(Request $request)
     {
-        $validatedData = $request->validate([
+        $validation = $request->validate([
             'title_en' => 'required',
             'slug' => 'required|unique:projects',
             'description' => 'required',
@@ -49,31 +49,42 @@ class DashboardController extends Controller
             'project_link' => 'required',
         ]);
 
-        // Store the image and get the image path
-        $imagePath = $request->file('image')->store('projects', 'public');
+        $imagePath = null;
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(base_path('../assets/mock'), $imageName);
+            $imagePath = $imageName;
+        }
 
         $project = Project::create([
-            'slug' => $validatedData['slug'],
-            'github_link' => $validatedData['github_link'],
-            'project_link' => $validatedData['project_link'],
-            'image' => $imagePath,
+            'slug' => $validation['slug'],
+            'github_link' => $validation['github_link'],
+            'project_link' => $validation['project_link'],
+            'image' => $imagePath, // Set the image path you saved earlier
         ]);
 
-        // Save project translations
-        $project->translations()->create([
-            'locale' => 'en',
-            'title' => $request->title_en,
-            'description' => $request->description,
-        ]);
+        $projectTranslation = new ProjectTranslation();
 
-        $project->translations()->create([
-            'locale' => 'ar',
-            'title' => $request->title_ar,
-            'description' => $request->description,
-        ]);
+        // Save translations
+        $projectTranslation->project_id  = $project->id;
+        $projectTranslation->locale  = 'en';
+        $projectTranslation->title = $request->title_en;
+        $projectTranslation->description = $request->description;
 
-        // Attach skills to the project
-        $project->skills()->attach($validatedData['skills']);
+        $projectTranslation->save();
+
+        $projectTranslation = new ProjectTranslation();
+
+        $projectTranslation->project_id  = $project->id;
+        $projectTranslation->locale  = 'ar';
+        $projectTranslation->title = $request->title_ar;
+        $projectTranslation->description = $request->description;
+
+        $projectTranslation->save();
+
+        $project->skills()->attach($validation['skills']);
 
         return redirect()->route('admin.projects.index');
     }
