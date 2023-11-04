@@ -14,7 +14,7 @@ class Project extends Model implements TranslatableContract
     public $translatedAttributes  = ['title', 'description'];
 
     use HasFactory;
-    protected $fillable = ['title', 'slug', 'description', 'image'];
+    protected $fillable = ['slug', 'description', 'image'];
 
     public function skills()
     {
