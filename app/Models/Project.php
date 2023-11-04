@@ -16,7 +16,7 @@ class Project extends Model
 
 
 
-    protected $fillable = ['slug', 'image'];
+    protected $fillable = ['slug', 'github_link', 'project_link', 'image'];
 
     public $translatedAttributes  = ['title', 'description'];
     public function skills()
