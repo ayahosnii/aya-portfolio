@@ -50,7 +50,6 @@ class DashboardController extends Controller
             ]);
 
 
-            dd($validation['title_en']);
             $project = new Project();
 
             $project->title = $validation['title_en'];
