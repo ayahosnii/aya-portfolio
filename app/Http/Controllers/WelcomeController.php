@@ -35,8 +35,14 @@ class WelcomeController extends Controller
     public function details($slug)
     {
         $project = Project::where('slug', $slug)->with('skills')->first();
+
+        if (!$project) {
+            abort(404);
+        }
+
         return view('details', compact('project'));
     }
+
 
     public function all()
     {
